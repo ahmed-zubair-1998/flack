@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat</title>
+    </head>
+    <body>
+		<h1>Hi, {{session['username']}}</h1>
+		<hr>
+        <h2>Users</h2>
+			<form method = "post">
+				<select name="user">
+					{%for user in users%}
+						<option value={{user}}>{{user}}</option>
+					{%endfor%}
+				</select>
+				<input type="submit" value="Chat!"/>
+			</form>
+		<h2>Rooms</h2>
+			<form method = "post">
+				<select  name="room">
+					{%for room in rooms%}
+						<option value={{room}}>{{room}}</option>
+					{%endfor%}
+				</select>
+				<input type="submit" value="Chat!"/>
+			</form>
+		<hr>
+		<h1>Create Room</h1>
+		<form method = "post">
+			<input name="new_room" required>
+			<button id="submit">Create</button>
+		</form>
+    </body>
+</html>
